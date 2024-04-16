@@ -20,6 +20,7 @@ class PersonViewModel: ViewModel() {
         personList.add(Person("Pescador","Chico",65,R.drawable.male03))
         personList.add(Person("Mecanico","Chica",21,R.drawable.female04))
         personList.add(Person("Cocinero","Chico",32,R.drawable.male04))
+        personList.add(Person("","A llegado al fin de la lista",0,R.drawable.male04))
 
 
 
