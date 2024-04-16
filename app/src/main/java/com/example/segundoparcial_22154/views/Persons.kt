@@ -35,7 +35,7 @@ fun PersonCard(person: Person){
                 contentDescription = "Student Image",
                 contentScale = ContentScale.Crop
             )
-            Spacer(modifier = Modifier.width(8.dp))
+            Spacer(modifier = Modifier.width(16.dp))
             Column {
                 Text(
                     text = person.profesion,
