@@ -4,12 +4,15 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -59,26 +62,24 @@ fun MainView(){
     val personviewmodel = PersonViewModel()
 
 
-    Column(modifier = Modifier.fillMaxSize()){
-        Row(modifier = Modifier.fillMaxWidth()) {
-            Text(text="¿Eres chico o chica?")
-            Image(
-                modifier = Modifier
-                    .size(50.dp)
-                    .clip(CircleShape),
-                painter = painterResource(id = R.drawable.oak),
-                contentDescription = "Student Image",
-                contentScale = ContentScale.Crop
-            )
-        }
-    }
-
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.background
     ){
+        Column(){
+            Row(modifier = Modifier.fillMaxSize()){
+                Text(text = "¿Eres Chico o Chica?")
+                Image(modifier = Modifier.size(50.dp).clip(CircleShape),
+                    painter = painterResource(id = R.drawable.oak),
+                    contentDescription = "Img"
 
+                )
+            }
+
+        }
+        Spacer(modifier = Modifier.width(16.dp))
         LazyColumn{
+
             items(personviewmodel.getPersonList()){person->
                 PersonCard(person)
             }
@@ -100,7 +101,8 @@ fun SecondView(){
         ) {
             Column(
                 modifier = Modifier
-                    .fillMaxSize().padding(10.dp),
+                    .fillMaxSize()
+                    .padding(10.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 TextField(
